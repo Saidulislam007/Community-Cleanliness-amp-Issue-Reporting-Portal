@@ -1,15 +1,12 @@
-
 import Banner from "../components/Banner";
 import RecentIssues from "../components/RecentIssues";
 import CommunityStats from "../components/CommunityStats";
 import VolunteerJoinSection from "../components/VolunteerJoinSection";
-import CategorySection from "../components/CategorySection"; //
+import CategorySection from "../components/CategorySection";
+
 
 
 const Home = () => {
-
-  
-
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Banner Section */}
@@ -17,8 +14,6 @@ const Home = () => {
 
       {/* Categories */}
       <CategorySection /> 
-
-         
 
       {/* Welcome / CTA Section */}
       <div className="text-center py-12 bg-gray-100 rounded-lg">
@@ -28,13 +23,14 @@ const Home = () => {
         <p className="text-gray-700 mb-6">
           Report issues in your local area, contribute to cleanup drives, and help make the community cleaner!
         </p>
-      
       </div>
+
+      {/* Add Issue Form 🟩 */}
+ 
 
       {/* Recent Complaints (dummy) */}
       <RecentIssues />
       <CommunityStats />
-      
       <VolunteerJoinSection />
     </div>
   );

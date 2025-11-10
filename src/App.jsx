@@ -12,6 +12,10 @@ import RoadDamage from "./pages/RoadDamage";
 import IssueDetail from "./pages/IssueDetail";
 import Footer from "./components/Footer";
 import RecentIssues from "./components/RecentIssues";
+import MyIssues from "./pages/MyIssues";
+import MyContribution from "./pages/MyContribution";
+
+
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return <div className="text-center mt-20">Loading...</div>;
@@ -33,6 +37,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/issues/:id" element={<IssueDetail />} />
+           <Route path="/my-issues" element={<MyIssues />} />      
+        <Route path="/my-contribution" element={<MyContribution />} />
           <Route path="/add-issue" element={
             <PrivateRoute><AddIssue /></PrivateRoute>
           } />
