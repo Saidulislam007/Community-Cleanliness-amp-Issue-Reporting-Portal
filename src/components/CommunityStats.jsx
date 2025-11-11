@@ -2,9 +2,9 @@
 import React from "react";
 
 const stats = [
-  { title: "Total Users", value: 1250 },
-  { title: "Issues Resolved", value: 842 },
-  { title: "Issues Pending", value: 158 },
+  { title: "Total Users", value: 1250, color: "bg-green-500" },
+  { title: "Issues Resolved", value: 842, color: "bg-blue-500" },
+  { title: "Issues Pending", value: 158, color: "bg-red-500" },
 ];
 
 const CommunityStats = () => {
@@ -16,10 +16,10 @@ const CommunityStats = () => {
           {stats.map((stat) => (
             <div
               key={stat.title}
-              className="bg-white shadow rounded-lg py-6 px-4 transform hover:scale-105 hover:shadow-lg focus:outline-none transition"
+              className={`${stat.color} text-white shadow rounded-lg py-6 px-4 transform hover:scale-105 hover:shadow-lg transition`}
             >
-              <p className="text-4xl font-bold text-green-800">{stat.value}</p>
-              <p className="text-gray-600 mt-2">{stat.title}</p>
+              <p className="text-4xl font-bold">{stat.value}</p>
+              <p className="mt-2">{stat.title}</p>
             </div>
           ))}
         </div>

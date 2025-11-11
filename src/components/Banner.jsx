@@ -20,7 +20,7 @@ const HeroSection = () => {
         <div className="hero-overlay bg-white/60"></div>
         <div className="hero-content flex-col lg:flex-row-reverse relative z-10">
           <img
-            src="https://i.ibb.co.com/d4F0NP1M/360-F-336613870-0-Qzialb-Gfpej-HED59twze09n-Pmj-Fh-ANY.jpg "
+            src="https://i.ibb.co.com/tpjm4Y4g/clean1.webp "
             alt="Indoor Plant"
             className="max-w-sm rounded-lg shadow-2xl"
           />
