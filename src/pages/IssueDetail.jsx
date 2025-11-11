@@ -9,7 +9,7 @@ const allIssues = [
       "The garbage bin near Central Park entrance is overflowing for the last 3 days, causing foul smell and attracting stray animals.",
     category: "Garbage",
     location: "Dhaka",
-    image: "https://i.ibb.co.com/4ZfhJ0tD/istockphoto-1570261439-612x612.jpg",
+    image: "https://i.ibb.co/DHbSXCfx/default.jpg",
     reportedBy: "Saidul Islam",
   },
   {
@@ -19,7 +19,7 @@ const allIssues = [
       "A building is being constructed illegally near the river bank. Immediate action is required to prevent damage to the ecosystem.",
     category: "Illegal Construction",
     location: "Dhaka",
-    image: "https://i.ibb.co.com/MyDLrvZG/buriganga-16.jpg",
+    image: "https://i.ibb.co/DHbSXCfx/default.jpg",
     reportedBy: "John Doe",
   },
   {
@@ -29,7 +29,7 @@ const allIssues = [
       "The bench in the central park is broken and unsafe for use. Needs repair urgently.",
     category: "Broken Public Property",
     location: "Dhaka",
-    image: "https://i.ibb.co.com/jPvP51Z9/istockphoto-2148479468-612x612.jpg",
+    image: "https://i.ibb.co/jPvP51Z9/istockphoto-2148479468-612x612.jpg",
     reportedBy: "Jane Doe",
   },
   {
@@ -39,7 +39,7 @@ const allIssues = [
       "A large pothole has appeared on the main road near the market. Vehicles are at risk.",
     category: "Road Damage",
     location: "Dhaka",
-    image: "https://i.ibb.co.com/jPbVQFHp/savar-1-20250710201330-20250710203112.webp",
+    image: "https://i.ibb.co/jPbVQFHp/savar-1-20250710201330-20250710203112.webp",
     reportedBy: "Alice",
   },
   {
@@ -49,7 +49,7 @@ const allIssues = [
       "The garbage bin in front of ABC School is overflowing and attracting pests.",
     category: "Garbage",
     location: "Dhaka",
-    image: "https://i.ibb.co.com/RkY4M6BB/p5-waste-infront-of-school-photo-by-md-jahidul-islam-3.jpg",
+    image: "https://i.ibb.co/RkY4M6BB/p5-waste-infront-of-school-photo-by-md-jahidul-islam-3.jpg",
     reportedBy: "Bob",
   },
   {
@@ -59,7 +59,7 @@ const allIssues = [
       "Someone built a wall on public land without permission. Needs legal action.",
     category: "Illegal Construction",
     location: "Dhaka",
-    image: "https://i.ibb.co.com/BmFdjFV/66687.jpg",
+    image: "https://i.ibb.co/BmFdjFV/66687.jpg",
     reportedBy: "Charlie",
   },
 ];
@@ -68,28 +68,51 @@ const IssueDetail = () => {
   const { id } = useParams();
   const issue = allIssues.find((i) => i.id === parseInt(id));
 
-  if (!issue) return <p className="text-center mt-10">Issue not found</p>;
+  if (!issue)
+    return <p className="text-center text-red-500 mt-10">Issue not found ⚠️</p>;
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-4">{issue.title}</h2>
-      <img
-        src={issue.image}
-        alt={issue.title}
-        className="w-150 h-110 object-cover rounded mb-6"
-      />
-      <p className="text-white mb-2">
-        <strong>Description:</strong> {issue.description}
-      </p>
-      <p className="text-white mb-2">
-        <strong>Category:</strong> {issue.category}
-      </p>
-      <p className="text-white mb-2">
-        <strong>Location:</strong> {issue.location}
-      </p>
-      <p className="text-white mb-2">
-        <strong>Reported By:</strong> {issue.reportedBy}
-      </p>
+    <div className="min-h-screen bg-green-50 py-12 px-6">
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden grid md:grid-cols-2 gap-6 p-6">
+        
+        {/* Image Section */}
+        <div>
+          <img
+            src={issue.image}
+            alt={issue.title}
+            className="w-full h-96 object-cover rounded-xl"
+          />
+        </div>
+
+        {/* Info Section */}
+        <div className="flex flex-col justify-center text-gray-800">
+          <h2 className="text-3xl font-bold text-green-800 mb-4">{issue.title}</h2>
+          
+          <p className="text-gray-600 mb-4">
+            <span className="font-semibold text-green-700">Description: </span>
+            {issue.description}
+          </p>
+
+          <p className="text-gray-600 mb-2">
+            <span className="font-semibold text-green-700">Category: </span>
+            {issue.category}
+          </p>
+
+          <p className="text-gray-600 mb-2">
+            <span className="font-semibold text-green-700">Location: </span>
+            {issue.location}
+          </p>
+
+          <p className="text-gray-600 mb-2">
+            <span className="font-semibold text-green-700">Reported By: </span>
+            {issue.reportedBy}
+          </p>
+
+          <button className="mt-6 bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg w-fit shadow transition">
+            Mark as Resolved
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
