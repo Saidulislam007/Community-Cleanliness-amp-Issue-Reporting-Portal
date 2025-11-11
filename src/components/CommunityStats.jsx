@@ -11,7 +11,7 @@ const CommunityStats = () => {
   return (
     <section className=" py-12 mb-10">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-green-800 mb-8">Community Stats</h2>
+        <h2 className="text-3xl font-bold text-gray-600 mb-8">Community Stats</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {stats.map((stat) => (
             <div

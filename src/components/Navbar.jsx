@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex text-lg flex-1 justify-center space-x-6">
-          <Link to="/" className="hover:underline hover:text-gray-200">Home</Link>
+          <Link to="/" className="hover:underline text-lg hover:text-gray-200">Home</Link>
           {user ? (
             <>
               <Link to="/issues" className="hover:underline hover:text-gray-200">All Issues</Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
               <Link to="/my-contribution" className="hover:underline hover:text-gray-200">My Contribution</Link>
             </>
           ) : (
-            <Link to="/issues" className="hover:underline hover:text-gray-200">Issues</Link>
+            <Link to="/issues" className="hover:underline text-lg hover:text-gray-200">Issues</Link>
           )}
         </div>
 
@@ -78,7 +78,7 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <div className="hidden md:flex space-x-4">
+            <div className="hidden text-lg md:flex space-x-4">
               <Link to="/login" className="hover:underline hover:text-gray-200">Login</Link>
               <Link to="/register" className="hover:underline hover:text-gray-200">Register</Link>
             </div>

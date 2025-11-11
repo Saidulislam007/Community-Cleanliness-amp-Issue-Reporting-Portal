@@ -14,7 +14,7 @@ const HeroSection = () => {
     <div className="relative mb-10">
       {/* 🌼 Hero Section */}
       <div
-        className="hero min-h-[75vh] bg-cover bg-center transition-all duration-700 rounded-2xl"
+        className="hero min-h-[65vh] bg-cover bg-center transition-all duration-700"
         style={{ backgroundImage: `url('${bgImage}')` }}
       >
         <div className="hero-overlay bg-white/60"></div>

@@ -8,12 +8,14 @@ import CategorySection from "../components/CategorySection";
 
 const Home = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className=" mx-auto ">
       {/* Banner Section */}
       <Banner />
 
       {/* Categories */}
-      <CategorySection /> 
+      <div className="container mx-auto">
+        <CategorySection /> 
+      </div>
 
       {/* Welcome / CTA Section */}
       <div className="text-center py-12 bg-gray-100 rounded-lg">

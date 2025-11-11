@@ -44,8 +44,8 @@ const VolunteerJoinSection = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="bg-gray-800 shadow-2xl backdrop-blur-md rounded-2xl w-full max-w-4xl p-10 border border-white/40">
-        <h2 className="text-4xl font-bold text-center text-gray-400 mb-8">
+      <div className=" shadow-2xl backdrop-blur-md rounded-2xl w-full max-w-4xl p-10 border border-white/40">
+        <h2 className="text-4xl font-bold text-center text-gray-600 mb-8">
           Contact My Clean City
         </h2>
 
@@ -58,7 +58,7 @@ const VolunteerJoinSection = () => {
               placeholder="Full Name *"
               value={formData.name}
               onChange={handleChange}
-              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-gray-600 outline-none"
               required
             />
             <input
@@ -67,7 +67,7 @@ const VolunteerJoinSection = () => {
               placeholder="Email Address *"
               value={formData.email}
               onChange={handleChange}
-              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-gray-600 outline-none"
               required
             />
             <input
@@ -76,7 +76,7 @@ const VolunteerJoinSection = () => {
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-gray-600 outline-none"
             />
             <input
               name="organization"
@@ -84,7 +84,7 @@ const VolunteerJoinSection = () => {
               placeholder="Organization"
               value={formData.organization}
               onChange={handleChange}
-              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-gray-600 outline-none"
             />
           </div>
 
@@ -95,7 +95,7 @@ const VolunteerJoinSection = () => {
             value={formData.message}
             onChange={handleChange}
             rows="8"
-            className="bg-gray-100 text-gray-900 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none resize-none"
+            className="bg-gray-100 text-gray-900 p-3 rounded-md focus:ring-2 focus:ring-gray-600 outline-none resize-none"
           ></textarea>
 
           {/* Checkbox */}
