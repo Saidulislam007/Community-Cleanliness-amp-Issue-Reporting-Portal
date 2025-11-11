@@ -31,7 +31,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex flex-1 justify-center space-x-6">
+        <div className="hidden md:flex text-lg flex-1 justify-center space-x-6">
           <Link to="/" className="hover:underline hover:text-gray-200">Home</Link>
           {user ? (
             <>

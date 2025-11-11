@@ -37,11 +37,11 @@ export default function Register() {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-white">
       <div className="hero-content flex-col lg:flex-row-reverse gap-10">
         {/* Left Side: Info */}
         <div className="text-center lg:text-left max-w-md">
-          <h1 className="text-5xl font-bold mb-4">Register now!</h1>
+          <h1 className="text-5xl text-gray-700 font-bold mb-4">Register now!</h1>
           <p className="py-4 text-gray-700">
             Join our community to report issues and contribute to a cleaner environment.
           </p>
@@ -49,8 +49,8 @@ export default function Register() {
 
         {/* Right Side: Register Card */}
         <div className="card w-full max-w-sm shadow-2xl bg-base-100">
-          <div className="card-body m-10">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div className="card-body m-8">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
