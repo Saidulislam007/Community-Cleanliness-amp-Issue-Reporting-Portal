@@ -2,3 +2,6 @@
 @tailwind utilities;
 @import "tailwindcss";
 @plugin "daisyui";
+body {
+  @apply bg-amber-50; /* Tailwind color */
+}

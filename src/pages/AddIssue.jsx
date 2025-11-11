@@ -40,7 +40,7 @@ export default function AddIssue() {
   };
 
   return (
-    <div className="max-w-md mx-auto py-10">
+    <div className="max-w-md bg-gray-800 mt-10 pl-15 rounded-2xl  mx-auto py-10">
       <h2 className="text-2xl font-bold mb-4">Add New Issue</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input type="text" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} required className="input input-bordered"/>
@@ -51,7 +51,7 @@ export default function AddIssue() {
         <textarea placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} required className="textarea textarea-bordered"/>
         <input type="text" placeholder="Image URL" value={image} onChange={e => setImage(e.target.value)} className="input input-bordered"/>
         <input type="number" placeholder="Amount (optional)" value={amount} onChange={e => setAmount(e.target.value)} className="input input-bordered"/>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary w-80">Submit</button>
       </form>
     </div>
   );

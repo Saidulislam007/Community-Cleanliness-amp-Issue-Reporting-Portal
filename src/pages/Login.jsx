@@ -31,11 +31,11 @@ export default function Login() {
   };
 
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-amber-50">
       <div className="hero-content flex-col lg:flex-row-reverse gap-10">
         {/* Left Side: Info */}
         <div className="text-center lg:text-left max-w-md">
-          <h1 className="text-5xl font-bold mb-4">Login now!</h1>
+          <h1 className="text-5xl text-gray-700 font-bold mb-4">Login now!</h1>
           <p className="py-4 text-gray-700">
             Welcome back! Please login with your credentials to access the Community Clean Portal.
           </p>
@@ -67,11 +67,6 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <div className="text-right">
-                <Link to="/forgot-password" className="link link-hover text-sm">
-                  Forgot password?
-                </Link>
-              </div>
               <button
                 type="submit"
                 className="btn btn-neutral mt-2 w-full"
