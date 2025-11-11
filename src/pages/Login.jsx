@@ -31,7 +31,7 @@ export default function Login() {
   };
 
   return (
-    <div className="hero min-h-screen bg-amber-50">
+    <div className="hero min-h-screen bg-white">
       <div className="hero-content flex-col lg:flex-row-reverse gap-10">
         {/* Left Side: Info */}
         <div className="text-center lg:text-left max-w-md">

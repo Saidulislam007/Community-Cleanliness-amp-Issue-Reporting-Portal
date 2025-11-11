@@ -16,7 +16,7 @@ const CommunityStats = () => {
           {stats.map((stat) => (
             <div
               key={stat.title}
-              className="bg-white shadow rounded-lg py-6 px-4 hover:shadow-lg transition"
+              className="bg-white shadow rounded-lg py-6 px-4 transform hover:scale-105 hover:shadow-lg focus:outline-none transition"
             >
               <p className="text-4xl font-bold text-green-800">{stat.value}</p>
               <p className="text-gray-600 mt-2">{stat.title}</p>

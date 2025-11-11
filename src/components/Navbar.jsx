@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <Link to="/" className="hover:text-gray-200">Cleanliness Portal</Link>
+          <Link to="/" className="hover:text-gray-200">Clean City</Link>
         </div>
 
         {/* Desktop Links */}

@@ -1,87 +1,140 @@
 import React, { useState } from "react";
-import { db } from "../firebase"; 
+import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const VolunteerJoinSection = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    organization: "",
+    message: "",
+  });
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState("");
 
-  const handleJoin = async (e) => {
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setMessage("");
+    setSuccess("");
 
     try {
-      await addDoc(collection(db, "volunteers"), {
-        name,
-        email,
-        joinedAt: serverTimestamp(),
+      await addDoc(collection(db, "volunteer_contacts"), {
+        ...formData,
+        createdAt: serverTimestamp(),
       });
-      setMessage("🎉 Thank you for joining! You’re now a community volunteer.");
-      setName("");
-      setEmail("");
+      setSuccess("🎉 Thank you for contacting us!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        organization: "",
+        message: "",
+      });
     } catch (error) {
-      console.error("Error adding volunteer:", error);
-      setMessage("❌ Something went wrong. Please try again.");
+      console.error("Error:", error);
+      setSuccess("❌ Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="bg-green-50 py-12">
-      <div className="container mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold text-green-800 mb-3">
-          Join Our Community Clean Drive
+    <div className="flex justify-center">
+      <div className="bg-gray-800 shadow-2xl backdrop-blur-md rounded-2xl w-full max-w-4xl p-10 border border-white/40">
+        <h2 className="text-4xl font-bold text-center text-gray-400 mb-8">
+          Contact My Clean City
         </h2>
-        <p className="text-gray-600 mb-6 max-w-xl mx-auto">
-          Become a volunteer and help make your city cleaner, greener, and better!
-        </p>
 
-        <form
-          onSubmit={handleJoin}
-          className="flex flex-col md:flex-row justify-center text-green-800 items-center gap-4"
-        >
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="px-4 py-2 rounded border w-72 focus:ring-2 focus:ring-green-400 outline-none"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="px-4 py-2 rounded border w-72 focus:ring-2 focus:ring-green-400 outline-none"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className={`px-6 py-2 text-white rounded ${
-              loading ? "bg-gray-400" : "bg-green-600 hover:bg-green-700"
-            } transition`}
-          >
-            {loading ? "Joining..." : "Join Now"}
-          </button>
+        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Left column */}
+          <div className="flex flex-col text-gray-900 gap-4">
+            <input
+              name="name"
+              type="text"
+              placeholder="Full Name *"
+              value={formData.name}
+              onChange={handleChange}
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+              required
+            />
+            <input
+              name="email"
+              type="email"
+              placeholder="Email Address *"
+              value={formData.email}
+              onChange={handleChange}
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+              required
+            />
+            <input
+              name="phone"
+              type="text"
+              placeholder="Phone Number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+            <input
+              name="organization"
+              type="text"
+              placeholder="Organization"
+              value={formData.organization}
+              onChange={handleChange}
+              className="bg-gray-100 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+          </div>
+
+          {/* Right column */}
+          <textarea
+            name="message"
+            placeholder="Write your message here..."
+            value={formData.message}
+            onChange={handleChange}
+            rows="8"
+            className="bg-gray-100 text-gray-900 p-3 rounded-md focus:ring-2 focus:ring-blue-400 outline-none resize-none"
+          ></textarea>
+
+          {/* Checkbox */}
+          <div className="md:col-span-2 flex items-center gap-2 mt-2">
+            <input type="checkbox" required className="w-4 h-4 accent-blue-500" />
+            <p className="text-sm text-gray-600">
+              I have read My Clean City's{" "}
+              <a href="#" className="text-blue-600 underline">
+                privacy policy
+              </a>{" "}
+              and agree to the terms and conditions.
+            </p>
+          </div>
+
+          {/* Submit button */}
+          <div className="md:col-span-2 flex justify-center">
+            <button
+              type="submit"
+              disabled={loading}
+              className={`w-full md:w-1/2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition duration-300 ${
+                loading && "bg-gray-400 cursor-not-allowed"
+              }`}
+            >
+              {loading ? "Submitting..." : "Submit"}
+            </button>
+          </div>
         </form>
 
-        {message && (
+        {success && (
           <p
-            className={`mt-4 ${
-              message.startsWith("🎉") ? "text-green-600" : "text-red-500"
+            className={`text-center mt-4 font-medium ${
+              success.startsWith("🎉") ? "text-green-600" : "text-red-600"
             }`}
           >
-            {message}
+            {success}
           </p>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -9,7 +9,7 @@ const Footer = () => {
         
         {/* Logo / Site Name */}
         <div className="flex flex-col items-start">
-          <h1 className="text-2xl font-bold mb-2">Cleanliness Portal</h1>
+          <h1 className="text-2xl font-bold mb-2">Clean City</h1>
           <p className="text-gray-400">
             Helping communities stay clean and reporting issues efficiently.
           </p>
