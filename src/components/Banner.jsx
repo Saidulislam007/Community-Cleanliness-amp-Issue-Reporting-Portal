@@ -24,16 +24,18 @@ const HeroSection = () => {
             alt="Indoor Plant"
             className="max-w-sm rounded-lg shadow-2xl"
           />
-          <div>
-            <h1 className="text-5xl font-bold text-green-800 drop-shadow-lg">
+          <div className="px-4 sm:px-6 lg:px-20 text-center md:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-800 drop-shadow-lg mb-2">
               Clean City
             </h1>
-            <h1 className="text-3xl font-bold text-green-800 drop-shadow-lg">Smart City Solutions</h1>
-            <p className="py-6 text-xl text-gray-800 font-medium">
-              Join our initiative to make your community cleaner and greener.
-            Report issues and contribute to a better environment.
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold text-green-800 drop-shadow-lg mb-4">
+              Smart City Solutions
+            </h2>
+            <p className="py-4 text-base sm:text-lg md:text-xl text-gray-800 font-medium leading-relaxed">
+              Join our initiative to make your community cleaner and greener. Report issues and contribute to a better environment. Together, we can build a safer, healthier, and more sustainable city for everyone.
             </p>
           </div>
+
         </div>
 
         {/* 🌿 Dotted Image Change Buttons */}

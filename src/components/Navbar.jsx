@@ -23,25 +23,26 @@ const Navbar = () => {
   const displayName = user?.displayName || user?.email?.split("@")[0] || "User";
 
   return (
-    <nav className="bg-gray-800 text-white p-4 shadow-md">
+    <nav className=" bg-white shadow-gray-500 mb-4 text-black p-4 shadow-md">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <Link to="/" className="hover:text-gray-200">Clean City</Link>
+          <i className="fa-solid fa-building-wheat"></i>
+          <Link to="/" className="hover:text-gray-600 ml-5 ">CleanCity</Link>
         </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex text-lg flex-1 justify-center space-x-6">
-          <Link to="/" className="hover:underline text-lg hover:text-gray-200">Home</Link>
+          <Link to="/" className="hover:underline text-lg transform transition hover:scale-120 hover:shadow-lg focus:outline-none hover:text-gray-600">Home</Link>
           {user ? (
             <>
-              <Link to="/issues" className="hover:underline hover:text-gray-200">All Issues</Link>
-              <Link to="/add-issue" className="hover:underline hover:text-gray-200">Add Issue</Link>
-              <Link to="/my-issues" className="hover:underline hover:text-gray-200">My Issues</Link>
-              <Link to="/my-contribution" className="hover:underline hover:text-gray-200">My Contribution</Link>
+              <Link to="/issues" className="hover:underline transform transition hover:scale-120 hover:shadow-lg focus:outline-none hover:text-gray-600">All Issues</Link>
+              <Link to="/add-issue" className="hover:underline transform transition hover:scale-120 hover:shadow-lg focus:outline-none hover:text-gray-600">Add Issue</Link>
+              <Link to="/my-issues" className="hover:underline transform transition hover:scale-120 hover:shadow-lg focus:outline-none hover:text-gray-600">My Issues</Link>
+              <Link to="/my-contribution" className="hover:underline transform transition hover:scale-120 hover:shadow-lg focus:outline-none hover:text-gray-600">My Contribution</Link>
             </>
           ) : (
-            <Link to="/issues" className="hover:underline text-lg hover:text-gray-200">Issues</Link>
+            <Link to="/issues" className="hover:underline text-lg transform transition hover:scale-120 hover:shadow-lg focus:outline-none hover:text-gray-600">Issues</Link>
           )}
         </div>
 
@@ -78,9 +79,9 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <div className="hidden text-lg md:flex space-x-4">
-              <Link to="/login" className="hover:underline hover:text-gray-200">Login</Link>
-              <Link to="/register" className="hover:underline hover:text-gray-200">Register</Link>
+            <div className="hidden mr-5 text-lg md:flex space-x-4">
+              <Link to="/login" className="hover:underline hover:text-gray-600">Login</Link>
+              <Link to="/register" className="hover:underline hover:text-gray-600">Register</Link>
             </div>
           )}
 
@@ -115,7 +116,7 @@ const Navbar = () => {
             <>
               <Link to="/issues" className="hover:underline hover:text-gray-200" onClick={() => setMobileMenuOpen(false)}>All Issues</Link>
               <Link to="/add-issue" className="hover:underline hover:text-gray-200" onClick={() => setMobileMenuOpen(false)}>Add Issue</Link>
-              <Link to="/my-issues" className="hover:underline hover:text-gray-200" onClick={() => setMobileMenuOpen(false)}>My Issues</Link>
+              <Link to="/my-issues" className="hover:underline  hover:text-gray-200" onClick={() => setMobileMenuOpen(false)}>My Issues</Link>
               <Link to="/my-contribution" className="hover:underline hover:text-gray-200" onClick={() => setMobileMenuOpen(false)}>My Contribution</Link>
             </>
           ) : (

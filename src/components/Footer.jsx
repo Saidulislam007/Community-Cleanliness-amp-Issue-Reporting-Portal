@@ -9,7 +9,7 @@ const Footer = () => {
         
         {/* Logo / Site Info */}
         <div>
-          <h1 className="text-2xl font-bold mb-3 text-white">Clean City</h1>
+          <h1 className="text-2xl font-bold mb-3 text-white">CleanCity</h1>
           <p className="text-gray-400 leading-relaxed">
             Helping communities stay clean and reporting issues efficiently.
             Join us in keeping our surroundings beautiful and healthy!

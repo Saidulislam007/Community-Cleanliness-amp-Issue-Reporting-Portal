@@ -41,7 +41,7 @@ const CategorySection = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+    <div className="grid grid-cols-1 sm:mx-2 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12">
       {categories.map((cat) => (
         <button
           key={cat.title}
