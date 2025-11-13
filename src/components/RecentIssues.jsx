@@ -61,7 +61,7 @@ export default function RecentIssues() {
         ))}
       </div>
 
-      {/* No Data */}
+  
       {issues.length === 0 && (
         <p className="text-center text-gray-500 mt-8">
           No community issues found.
