@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function RecentIssues() {
   const [issues, setIssues] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -50,7 +52,7 @@ export default function RecentIssues() {
 
               <div className="card-actions justify-end mt-4">
                 <button
-                  onClick={() => window.location.href = `/issue/${issue._id}`}
+                  onClick={() => navigate(`/issue/${issue._id}`)}
                   className="btn btn-sm bg-gradient-to-r from-[#EEAECA] to-[#94BBE9] text-white hover:opacity-90"
                 >
                   See Details
@@ -61,7 +63,7 @@ export default function RecentIssues() {
         ))}
       </div>
 
-  
+
       {issues.length === 0 && (
         <p className="text-center text-gray-500 mt-8">
           No community issues found.
