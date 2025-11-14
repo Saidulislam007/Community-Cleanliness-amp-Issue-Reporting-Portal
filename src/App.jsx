@@ -36,18 +36,18 @@ function App() {
           <Route path="/issues" element={<RecentIssues />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/issues/:id" element={<IssueDetail />} />
-           <Route path="/my-issues" element={<MyIssues />} />      
-        <Route path="/my-contribution" element={<MyContribution />} />
+          <Route path="/issue/:id" element={<IssueDetail />} />
+          <Route path="/my-issues" element={<MyIssues />} />
+          <Route path="/my-contribution" element={<MyContribution />} />
           <Route path="/add-issue" element={
             <PrivateRoute><AddIssue /></PrivateRoute>
           } />
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
-      
+
     </AuthProvider>
-    
+
   );
 }
 
